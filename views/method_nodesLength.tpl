@@ -7,6 +7,7 @@
 		<script src="/static/scripts/modernizr-2.6.2.js"></script>
 		<link rel="stylesheet" href="/static/content/header.css">
 		<link rel="stylesheet" href="/static/content/pageMethods.css">
+		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 		<title>OnlyMath</title>
 	</head>
 	<body>
