@@ -17,9 +17,11 @@
 		<article>
 			<p><a name="top"></a></p>
 			<div class="article__container"> 
+				%if image =="":
 				<div class="container__linkTheory">
 					<a href="#theory_top">посмотреть теорию</a>
 				</div>
+				%end
 
 				<form action="#" class="container__data" method="post">
 				
@@ -35,12 +37,17 @@
 				</figure>
 					<!--Контейнер с кнопками -->
 					<div class="data__input">
-						<input class="count__matrix" placeholder="размерность матрицы" type="number" min="2" max="25" value="" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
-						<input class="count__matrix" placeholder="Уровень" type="number" min="0" max="25" value="0" name="level" title="Значение должно быть не меньше 0 и не больше 25" required>
-						<input accept=".txt" type="file" placeholder="asd" class="button__all button__open"></a>
-						<a class="button__all button__save">сохранить</a>
-						<input class="button__all button__apply" type="submit" name="form__button" value="посчитать результат">
+					%if image =="":
+						<input class="count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
+					%else:
+						<input class="count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="{{len(matrixout)}}" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
+					%end
+						<input class="count__matrix" id="idlevel" placeholder="Уровень" type="number" min="0" max="25" value="" name="level" title="Значение должно быть не меньше 0 и не больше 25" required>
+						<a class="button__all button__save">Cохранить</a>
+						<input class="button__all button__apply" type="submit" name="form__button" value="Результат">
 					</div>
+					<p style="font-size:20px">Введите матрицу смежности:</p>
+					<p style="font-size:15px">Для выбора значения нажмите на необходимую клетку</p>
 					<!--Перенос введенной матрицы -->
 					<table class="table__matrix" id="matrix_JS">
 					%if image !="":
@@ -55,6 +62,7 @@
 					</table>
 
 					<!--Теория необходимая для работы -->
+					%if image =="":
 					<h1>Теория</h1>
 					
 					<p><a name="theory_top"></a></p>
@@ -95,6 +103,7 @@
 					<p dir="ltr"><span style="font-size:20px"><img src="https://lh3.googleusercontent.com/LSVpvpxyH1U6UY8UsAk51RZrphzqPonHLIDd74aw5Gdfo81pri4TbiSSZfdmKrCAHHNKmGfoKLjeo-TKMqwGBqVMsI2IqkY-T7tcD2XwXwFGspnweMD-vbfxD2mBDE1lx_gJ3l6pGuO6be9QAA" style="height:94px; width:372px" /></span></p>
 					
 					<p><a href="#top">Наверх</a></p>
+					%end
 					
 					<script>
 
@@ -105,6 +114,7 @@
 						$('.count__matrix').change(function() { 
 
 							testik = Number($('.count__matrix').val());
+							$("#idlevel").attr('max', testik)
 
 							if (testik <= testikMAX && testik >= testikMIN) {
 
@@ -142,7 +152,7 @@
 					 	//  Сохранение матрицы в "Загрузки"
 
 							$('.button__save').click(function() {
-
+								testik = Number($('.count__matrix').val());
 								var matrix = "";
 
 								for (var i = 1; i <= testik; i++) {
