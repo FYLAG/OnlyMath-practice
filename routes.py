@@ -52,5 +52,8 @@ def method_nodesLength():
     """Renders the method nodes length page."""
     return dict(
         title = "Поиск в графе вершин, имеющих наибольшее окружение",
-        year=datetime.now().year
+        year=datetime.now().year,
+        image="",
+        levelout=0,
+        matrixout=[""]
     )

@@ -8,7 +8,6 @@ from random import randint
 def fillingMatrix():
 
     pass
-
     #lenMatrix = request.forms.getlist('');
 
     #matrix = [([0] * for o in range(lenMatrix)) for i in range(lenMatrix) ]
