@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+п»ї<!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8">
@@ -17,14 +17,14 @@
 		<article>
 			<div class="article__container">
 				<div class="container__linkTheory">
-					<a href="#?id=theory">посмотреть теорию</a>
+					<a href="#?id=theory">РїРѕСЃРјРѕС‚СЂРµС‚СЊ С‚РµРѕСЂРёСЋ</a>
 				</div>
 				<form action="#" class="container__data" method="POST">
 					<div class="data__input">
-						<input class="count__matrix" placeholder="размерность матрицы" type="number" min="2" max="25" value="" name="" title="Значение должно быть не меньше 1 и не больше 25" required>
+						<input class="count__matrix" placeholder="СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ РјР°С‚СЂРёС†С‹" type="number" min="2" max="25" value="" name="" title="Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РЅРµ РјРµРЅСЊС€Рµ 1 Рё РЅРµ Р±РѕР»СЊС€Рµ 25" required>
 						<input accept=".txt" type="file" placeholder="asd" class="button__all button__open"></a>
-						<a class="button__all button__save">сохранить</a>
-						<input class="button__all button__apply" type="submit" name="form__button" value="посчитать результат">
+						<a class="button__all button__save">СЃРѕС…СЂР°РЅРёС‚СЊ</a>
+						<input class="button__all button__apply" type="submit" name="form__button" value="РїРѕСЃС‡РёС‚Р°С‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚">
 					</div>
 					<table class="table__matrix" id="matrix_JS"></table>
 
@@ -71,7 +71,7 @@
 
 						});
 
-					 	// Добавление нового элемента на страницу.
+					 	// Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РЅР° СЃС‚СЂР°РЅРёС†Сѓ.
 
 							$('.button__save').click(function() {
 

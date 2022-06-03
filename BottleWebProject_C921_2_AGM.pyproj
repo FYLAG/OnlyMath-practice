@@ -31,6 +31,9 @@
   <ItemGroup>
     <Compile Include="app.py" />
     <Compile Include="allMethods.py" />
+    <Compile Include="NodesLength.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes.py" />
   </ItemGroup>
   <ItemGroup>

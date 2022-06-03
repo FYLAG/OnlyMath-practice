@@ -8,7 +8,6 @@ from random import randint
 def fillingMatrix():
 
     pass
-
     #lenMatrix = request.forms.getlist('');
 
     #matrix = [([0] * for o in range(lenMatrix)) for i in range(lenMatrix) ]
@@ -16,7 +15,6 @@ def fillingMatrix():
     #print(matrix)
 
     #return matrix
-
 def Get_adjacency_matrix(file): #cчитывание графа из файла
     adj_matrix = list()
     graphline = file
