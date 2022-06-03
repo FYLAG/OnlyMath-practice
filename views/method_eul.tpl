@@ -16,22 +16,27 @@
 		<!-- link header -->
 		<article>
 			<div class="article__container">
+			<!-- Блок с кнопкой истории -->
 			%if image_path == "":
 				<div class="container__linkTheory">
 					<a href="#Theory_Block">посмотреть теорию</a>
 				</div>
 				%end
+				<!-- Форма для заполнения матрицы -->
 				<form action="#" class="container__data" method="POST">
+				<!-- Блок с изображением графа -->
 					<div class = "graph_image">
 					% if image_path != "":
 						<img src="{{image_path}}"
 						%end
-					</div>	
+					</div>
+					<!-- Блок с результатом вычислений -->
 					<div>
 					% if image_path != "":
 						<fragment style="font-size: 20px">Результат: {{result}}</fragment>
 						%end
 					</div>
+					<!-- Блок с элементами ввода -->
 					<div class="data__input">
 					%if image_path != "":
 						<input class="count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="{{len(matrixout)}}" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
@@ -44,6 +49,7 @@
 					<div class="matrix__help">
 						<p style="margin-top:20px; font-size:20px">Введите матрицу смежности, нажимая на числа в ячейках. При нажатии число сменится с 0 на 1 или наоборот</p>
 					</div>
+					<!-- Создание таблицы -->
 					<table class="table__matrix" id="matrix_JS">
 						% if image_path != "":
 							% for o in range(len(matrixout)):
@@ -93,6 +99,7 @@
 						<br><p style="text-align:center">Алгоритм построения <b>эйлерова пути</b> аналогичен предыдущему, с той лишь разницей что начальной нужно выбирать вершину с нечетной степенью.</p></br>
 					</div>
 					%end
+					<!-- Скрипт генерации таблицы-->
 					<script>
 
 						var testikMAX = Number($('.count__matrix').attr('max'));
@@ -126,7 +133,7 @@
 					 			}
 							}
 						})
-
+						// Генерация ячеек таблицы
 						$("#matrix_JS").on('click', 'input', function() {
 							
 							var changedInput = $(this);
@@ -137,7 +144,7 @@
 							$("input[name='" + nameInput.split(".")[1]+'.'+nameInput.split(".")[0] + "']").val(changedInput.val())
 
 						});
-
+						// Сохранение содержимого таблицы в файл в виде матрицы смежности
 					 	// Добавление нового элемента на страницу.
 
 							$('.button__save').click(function() {
