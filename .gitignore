@@ -124,6 +124,12 @@ ipch/
 # TFS 2012 Local Workspace
 $tf/
 
+#Ignore README.md file
+README.md
+
+#Ignore env/ foulder
+env/
+
 # Guidance Automation Toolkit
 *.gpState
 
