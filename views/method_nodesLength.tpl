@@ -144,8 +144,9 @@
 							var changedInput = $(this);
 
 							changedInput.val(Math.abs(changedInput.val() - 1))
+							var nameInput =changedInput.attr('name')
 							
-							$("input[name='" + changedInput.attr("name").split("").reverse().join("") + "']").val(changedInput.val())
+							$("input[name='" + nameInput.split(".")[1]+'.'+nameInput.split(".")[0] + "']").val(changedInput.val())
 
 						});
 
