@@ -31,7 +31,7 @@ def Get_adjacency_matrix(file): #cчитывание графа из файла
         for i in range(len(l)):
             l[i] = int(l[i])
         adj_matrix.append(l)
-    #checkMatrix(adj_matrix)
+    checkMatrix(adj_matrix)
     graphfile.close()
     return adj_matrix
 
@@ -122,3 +122,40 @@ def method():
         result = res,
         matrixout = matrix
     )
+
+
+def method_test(matrix):
+    plt.clf()
+    G = nx.Graph(np.matrix(matrix))
+    res = ""
+    matrString = ""
+    for l in matrix:
+        matrString += str(l);
+        matrString += "\n"
+    try:
+        L = []
+        color_map = []
+        try:
+            eul_circ = list(nx.eulerian_circuit(G))     
+            line = showEulPathLoop(eul_circ, ' => ', 'цикл; \n')
+            res += line
+            C = nx.from_edgelist(eul_circ)
+            for edge in G:
+                if edge in C:
+                    color_map.append('blue')
+                else:
+                    color_map.append("#333")
+        except:
+            res += "Граф не содержит эйлеров цикл. \n"
+        eul_path = list(nx.eulerian_path(G))
+        C = nx.from_edgelist(eul_path)
+        for edge in G:
+            if edge in C:
+                color_map.append('blue')
+            else:
+                color_map.append("#333")
+        line = showEulPathLoop(eul_path, ' -> ', 'путь')
+        res += line
+    except:
+        res += "Граф не содержит эйлеров путь."
+    return (res)

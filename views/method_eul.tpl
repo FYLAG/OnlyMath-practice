@@ -34,12 +34,12 @@
 					</div>
 					<div class="data__input">
 					%if image_path != "":
-						<input class="count__matrix" placeholder="размерность матрицы" type="number" min="2" max="25" value="{{len(matrixout)}}" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
+						<input class="count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="{{len(matrixout)}}" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
 						%else:
-						<input class="count__matrix" placeholder="размерность матрицы" type="number" min="2" max="25" value="" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
+						<input class="count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
 						%end
-						<a class="button__all button__save">сохранить</a>
-						<input class="button__all button__apply" type="submit" name="form__button" value="посмотреть результат">
+						<a class="button__all button__save">Сохранить</a>
+						<input class="button__all button__apply" type="submit" name="form__button" value="Результат">
 					</div>
 					<div class="matrix__help">
 						<p style="margin-top:20px; font-size:20px">Введите матрицу смежности, нажимая на числа в ячейках. При нажатии число сменится с 0 на 1 или наоборот</p>

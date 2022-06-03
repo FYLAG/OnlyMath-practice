@@ -41,9 +41,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes.py" />
-    <Compile Include="static\tests\test_isEuler.py" />
-    <Compile Include="static\tests\test_T_isAsymmetrical.py" />
-    <Compile Include="static\tests\test_T_isSymmetrical.py" />
+    <Compile Include="test_isEuler.py" />
+    <Compile Include="test_T_isAsymmetrical.py" />
+    <Compile Include="test_T_isSymmetrical.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="static\" />
