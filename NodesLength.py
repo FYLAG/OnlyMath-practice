@@ -4,9 +4,54 @@ import re, pdb, app, routes
 import networkx as nx
 import numpy as np
 import time
+import re
 import os
 import matplotlib.pyplot as plt
 
+
+def sizeleve(matrix,level):#проверка правильности ввода яруса и размера матрицы
+    sizematrix=len(matrix)
+    if level<=sizematrix:
+        return True
+    else:
+        return False
+
+def checkMatrix(matrix): #Проверка симметричности матрицы
+    n = len(matrix)
+    h= True
+    for k in range(0,n-1):
+        for l in range(k+1,n):
+            if matrix[k][l]!=matrix[l][k]:
+                h=False
+                break
+    if h!=False:
+        print('Матрица симметрична')
+    else:
+        print('Матрица асимметрична')
+    return h
+
+def Get_adjacency_matrix(file): #cчитывание графа из файла
+    adj_matrix = list()
+    graphfile = open(file, 'r')
+    for l in graphfile:
+        l = l.rstrip()[1:-1].split(',')
+        for i in range(len(l)):
+            l[i] = int(l[i])
+        adj_matrix.append(l)
+    checkMatrix(adj_matrix)
+    graphfile.close()
+    return adj_matrix
+
+def getTestResult(matrix,k):#метод проверки результата для unit тестирования
+    G = nx.Graph(np.matrix(matrix))#отрисовка графа по матрице смежности
+    length = dict(nx.all_pairs_shortest_path_length(G))
+    R = np.array([[length.get(m,{}).get(n, 0) <= k for m in G.nodes] for n in G.nodes], dtype=np.int32)#образование матрицы достижимости k степени
+    array_indexes=np.argwhere(np.sum(R, axis=-1) == max(R.sum(axis=1))) #поиск точек с максимальным окружением
+    flat_array = array_indexes.flatten()
+    result="Вершины с максимальным окружением на уровне "+str(k)+" :" #запись результата
+    for i in flat_array:
+        result+=str(i)+","
+    return result
 
 def get_matrix(): # метод получения матрицы со страницы html
     lenMatrix = request.forms.get('matrix_size')
