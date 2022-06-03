@@ -1,12 +1,12 @@
-import unittest, os, sys, PythonApplication1
+import unittest, os, sys, method_eul
 
 class Test_test_isEuler(unittest.TestCase):
     def test(self):
-        dirs = os.listdir("C:/Users/user1.STDM2/Desktop/PythonApplication1/tests/matrix/Симметричные")
+        dirs = os.listdir("static/tests/Симметричные/")
         for file in dirs:
             print("======" + file + "======")
-            filename = "C:/Users/user1.STDM2/Desktop/PythonApplication1/tests/matrix/Симметричные/" + file
-            matrix = PythonApplication1.checkMatrix(PythonApplication1.Get_adjacency_matrix(filename))
+            filename = "static/tests/Симметричные/" + file
+            matrix = method_eul.checkMatrix(method_eul.Get_adjacency_matrix(filename))
             self.assertTrue(matrix)
             print(matrix)
 

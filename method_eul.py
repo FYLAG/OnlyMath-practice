@@ -59,7 +59,7 @@ def showEulPathLoop(K, sym, type):
     return(line + type)
 @post('/method-eul', method="post")
 @view('method_eul')
-def Gregory():
+def method():
     plt.clf()
     #adj_matrix = Get_adjacency_matrix(matrix)
     #print(adj_matrix)
@@ -114,7 +114,6 @@ def Gregory():
     history.write("\n ========== " + str(datetime.datetime.now()) + " ========== " + "\n" + matrString + res)
     history.close()
     plt.savefig(pathPicture)
-    
 
     return dict (
         title = "Поиск Эйлерова цикла",
