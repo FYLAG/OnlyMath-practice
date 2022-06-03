@@ -61,7 +61,6 @@
   <ItemGroup>
     <Content Include="requirements.txt" />
     <Content Include="static\content\header.css" />
-    <Content Include="static\content\index.css" />
     <Content Include="static\content\pageAuthors.css" />
     <Content Include="static\content\pageMain.css" />
     <Content Include="static\content\pageMethods.css" />
