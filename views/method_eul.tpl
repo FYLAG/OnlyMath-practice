@@ -104,18 +104,18 @@
 
 						var testikMAX = Number($('.count__matrix').attr('max'));
 						var testikMIN = Number($('.count__matrix').attr('min'));
-
-						var testik = 2;
-
+						// Событие изменения размерности матрицы
 						$('.count__matrix').change(function() {
 
 							testik = Number($('.count__matrix').val());
 
-
+							//Проверка на граничные значения
 							if (testik <= testikMAX && testik >= testikMIN) {
 
+								//Очистка таблицы
 								$('#matrix_JS *').remove();
 
+								//Генерация элементов таблицы
 								for (var i = testik; i > 0; i--) {
 
 					 				$('#matrix_JS').prepend('<tr>');
@@ -133,11 +133,12 @@
 					 			}
 							}
 						})
-						// Генерация ячеек таблицы
+						// Обработка события нажатия на клетку
 						$("#matrix_JS").on('click', 'input', function() {
 							
 							var changedInput = $(this);
 
+							// Вычитаем 1 и берём модуль
 							changedInput.val(Math.abs(changedInput.val() - 1))
 							var nameInput =changedInput.attr('name')
 							
