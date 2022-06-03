@@ -106,7 +106,10 @@ def Gregory():
         nx.draw(G,pos=nx.circular_layout(G), node_color="#C83033", node_size=400, font_color='white',edge_color="#333", with_labels=True, arrows=False)
     dt = datetime.datetime.now()
     filename = int(time.mktime(dt.timetuple()))
-    pathPicture = 'static/graphs/'+str(filename)+'.png'
+    dir = 'static/graphs/'
+    for f in os.listdir(dir):#очистка директории
+        os.remove(os.path.join(dir, f))
+    pathPicture = dir+str(filename)+'.png'
     history = open('historyEul.txt', 'a')
     history.write("\n ========== " + str(datetime.datetime.now()) + " ========== " + "\n" + matrString + res)
     history.close()

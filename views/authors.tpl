@@ -23,20 +23,20 @@
 			<div class="article__container">
 				<div class="container__author">
 					<div class="author__image">
-						<img src="/static/pictures/clown_nose.gif">
+						<img src="/static/pictures/cat-laptop.gif">
 					</div>
 					<div class="author__info">
 						<h2>Андреев Егор Романович</h2>
-						<p>Работает в отделе по костылям.</p>
+						<p>Начальник отдела по костылям. Реалиазция алгоритма поиска вершин, создание страницы для алгоритма поиска вершин, написание JS скриптов, написание gitignore.</p>
 					</div>
 				</div>
 				<div class="container__author">
 					<div class="author__info">
 						<h2>Гаврилов Александр Юрьевич</h2>
-						<p>Рандомный чел... возможно, предатель.</p>
+						<p>Рандомный чел... возможно, предатель, возможно HTML гигачад, но это не точно.</p>
 					</div>
 					<div class="author__image">
-						<img style="transform: translate(-50%, -50%) scale(-.5, .5); filter: grayscale(100%)" src="/static/pictures/amogus.gif">
+						<img style="transform: translate(-50%, -50%) scaleX(-1); filter: grayscale(100%)" src="/static/pictures/amogus.gif">
 					</div>
 				</div>
 				<div class="container__author">
@@ -45,7 +45,7 @@
 					</div>
 					<div class="author__info">
 						<h2>Маганков Григорий Дмитриевич</h2>
-						<p>Всё просто, он наш гигачат!</p>
+						<p>Реализация алгоритма поиска эйлерова цикла и пути. Создание страницы для поиска эйлерова цикла и пути. Написание README.</p>
 					</div>
 				</div>
 			</div>
