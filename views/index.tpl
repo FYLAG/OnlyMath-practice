@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8">
@@ -14,7 +14,10 @@
 		%include header.tpl title=title
 		<!-- link header -->
 		<article>
-
+			<div class ="main__block">
+				<p><b>ONLYMATH</b></p>
+				<p>Алгоритмы нахождений эйлерова пути и цикла, вхождение вех фрагментов в граф и представление клоуна Егора</p>
+			</div>
 		</article>
 		<!-- link footer -->
 		%include footer.tpl year=year

@@ -31,7 +31,10 @@ def method_eul():
     """Renders the method eul page."""
     return dict(
         title = "Поиск Эйлерова цикла",
-        year=datetime.now().year
+        year=datetime.now().year,
+        image_path = "",
+        result = "",
+        matrixout = [""]
     )
 
 @route('/method-fragments')

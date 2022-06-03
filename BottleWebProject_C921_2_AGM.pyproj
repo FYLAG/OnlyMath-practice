@@ -19,6 +19,9 @@
     <Name>BottleWebProject_C921_2_AGM</Name>
     <RootNamespace>BottleWebProject_C921_2_AGM</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,20 +34,31 @@
   <ItemGroup>
     <Compile Include="app.py" />
     <Compile Include="allMethods.py" />
+    <Compile Include="method_eul.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes.py" />
+    <Compile Include="static\tests\test_isEuler.py" />
+    <Compile Include="static\tests\test_T_isAsymmetrical.py" />
+    <Compile Include="static\tests\test_T_isSymmetrical.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="static\" />
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\graphs\" />
+    <Folder Include="static\tests\" />
     <Folder Include="static\pictures\" />
     <Folder Include="static\scripts\" />
+    <Folder Include="static\tests\Эйлеровые\" />
+    <Folder Include="static\tests\Асимметричные\" />
+    <Folder Include="static\tests\Симметричные\" />
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
     <Content Include="static\content\header.css" />
+    <Content Include="static\content\index.css" />
     <Content Include="static\content\pageAuthors.css" />
     <Content Include="static\content\pageMain.css" />
     <Content Include="static\content\pageMethods.css" />
@@ -66,6 +80,18 @@
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\_references.js" />
+    <Content Include="static\tests\Асимметричные\data %281%29.txt" />
+    <Content Include="static\tests\Асимметричные\data %282%29.txt" />
+    <Content Include="static\tests\Асимметричные\data %283%29.txt" />
+    <Content Include="static\tests\Асимметричные\data.txt" />
+    <Content Include="static\tests\Симметричные\data %281%29.txt" />
+    <Content Include="static\tests\Симметричные\data %282%29.txt" />
+    <Content Include="static\tests\Симметричные\data %283%29.txt" />
+    <Content Include="static\tests\Симметричные\data.txt" />
+    <Content Include="static\tests\Эйлеровые\data %281%29.txt" />
+    <Content Include="static\tests\Эйлеровые\data %282%29.txt" />
+    <Content Include="static\tests\Эйлеровые\data %283%29.txt" />
+    <Content Include="static\tests\Эйлеровые\data.txt" />
     <Content Include="views\authors.tpl" />
     <Content Include="views\footer.tpl" />
     <Content Include="views\header.tpl" />
