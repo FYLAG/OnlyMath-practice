@@ -44,7 +44,7 @@ def reading():
     #Задание размера матрицы
     matrix = [ [ 0 for o in range(intnumber) ] for i in range(intnumber)]
     print(matrix)
-    #Преборазование полученной матрицы в готовую для конвертации
+    #Преборазование ячеек из формы в готовую для конвертации матрицу
     for o in range(intnumber):
         for i in range(intnumber):
             name=str(i+1)+"."+str(o+1)
@@ -99,7 +99,7 @@ def method():
                     #Окрашивание в чёрный цвет ребра
                     color_map.append("#333")
         except:
-            res += "Граф не содержит эйлеров цикл. \n"
+            res += "Граф не является эйлеровым и не содержит эйлеров цикл. \n"
             print("Не содержит эйлеров цикл")
         eul_path = list(nx.eulerian_path(G))
         #Вызов метода нахождения эйлерова пути

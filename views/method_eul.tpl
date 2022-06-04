@@ -47,7 +47,7 @@
 						<input class="button__all button__apply" type="submit" name="form__button" value="Результат">
 					</div>
 					<div class="matrix__help">
-						<p style="margin-top:20px; font-size:20px">Введите матрицу смежности, нажимая на числа в ячейках. При нажатии число сменится с 0 на 1 или наоборот</p>
+						<p style="margin-top:20px; font-size:20px">Введите матрицу смежности, нажимая на числа в ячейках. При нажатии число сменится с 0 на 1 или наоборот. Если матрица смежности содержит изолированные вершины, то их следует удалить.</p>
 					</div>
 					<!-- Создание таблицы -->
 					<table class="table__matrix" id="matrix_JS">
