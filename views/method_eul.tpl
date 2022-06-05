@@ -47,7 +47,7 @@
 						<input class="button__all button__apply" type="submit" name="form__button" value="Результат">
 					</div>
 					<div class="matrix__help">
-						<p style="margin-top:20px; font-size:20px">Введите матрицу смежности, нажимая на числа в ячейках. При нажатии число сменится с 0 на 1 или наоборот</p>
+						<p style="margin-top:20px; font-size:20px">Введите матрицу смежности, нажимая на числа в ячейках. При нажатии число сменится с 0 на 1 или наоборот. Если матрица смежности содержит изолированные вершины, то их следует удалить.</p>
 					</div>
 					<!-- Создание таблицы -->
 					<table class="table__matrix" id="matrix_JS">
@@ -104,18 +104,18 @@
 
 						var testikMAX = Number($('.count__matrix').attr('max'));
 						var testikMIN = Number($('.count__matrix').attr('min'));
-
-						var testik = 2;
-
+						// Событие изменения размерности матрицы
 						$('.count__matrix').change(function() {
 
 							testik = Number($('.count__matrix').val());
 
-
+							//Проверка на граничные значения
 							if (testik <= testikMAX && testik >= testikMIN) {
 
+								//Очистка таблицы
 								$('#matrix_JS *').remove();
 
+								//Генерация элементов таблицы
 								for (var i = testik; i > 0; i--) {
 
 					 				$('#matrix_JS').prepend('<tr>');
@@ -133,11 +133,12 @@
 					 			}
 							}
 						})
-						// Генерация ячеек таблицы
+						// Обработка события нажатия на клетку
 						$("#matrix_JS").on('click', 'input', function() {
 							
 							var changedInput = $(this);
 
+							// Вычитаем 1 и берём модуль
 							changedInput.val(Math.abs(changedInput.val() - 1))
 							var nameInput =changedInput.attr('name')
 							

@@ -77,8 +77,6 @@
     <Content Include="static\content\pageAuthors.css" />
     <Content Include="static\content\pageMain.css" />
     <Content Include="static\content\pageMethods.css" />
-    <Content Include="static\pictures\clown_nose.gif" />
-    <Content Include="static\pictures\amogus.gif" />
     <Content Include="static\pictures\leclerc.gif" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
