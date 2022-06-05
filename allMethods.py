@@ -22,7 +22,8 @@ def transformationListDots(listDots): # функция для красивого
 
 	for i in range(len(listDots)):
 
-		listDots[i] = ' - '.join(map(str,listDots[i]))
+		# listDots[i] = ' - '.join(map(str, map(lambda x: x + 1, listDots[i])))
+		listDots[i] = ' - '.join(map(str, listDots[i]))
 
 	return listDots
 
@@ -38,16 +39,15 @@ def matrixReading(sizeMatrix, nameMatrix): # функция для автосо�
 
 	return finishMatrix
 
-def matrixPicture(matrix):
+def matrixPicture(matrixArr, nameResultSave):
 	
 	plt.clf() # очистка буфера MatPlotLib
-
-	G = nx.Graph(np.matrix(matrix)) # создание матрицы из преобразованной в np.matrix
+	
+	G = nx.Graph(np.matrix(matrixArr.copy())) # создание матрицы из преобразованной в np.matrix
 
 	nx.draw(G, pos=nx.circular_layout(G), node_color="#C83033", node_size=400, font_color='white', edge_color='#333', with_labels=True, arrows=False)
 
-	dt = datetime.datetime.now() # запись уникального времени в переменную
-	fileName = str(round(time.mktime(dt.timetuple())))
-	plt.savefig('static/graphs/' + fileName + '.png') # сохранение изображения графа
+	plt.savefig('static/graphs/' + nameResultSave + '.png') # сохранение изображения графа по указанному пути
+	# plt.show() # быстрый вывод изображения графа, в отдельном окне
 
-	return fileName
+	del G

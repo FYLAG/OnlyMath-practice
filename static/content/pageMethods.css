@@ -111,7 +111,7 @@ article {
 .graph__image img {
 	position: sticky;
 	border: 1px solid #AAA;
-	background: #FFF;
+	
 	padding: 25px;
 	z-index: 10;
 	width: 100%;

@@ -58,6 +58,7 @@
     <Compile Include="test_T_isSymmetrical.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="history\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
@@ -72,6 +73,9 @@
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="history\historyEul.txt" />
+    <Content Include="history\hystoryMethodFragments.txt" />
+    <Content Include="history\nodelength_history.txt" />
     <Content Include="requirements.txt" />
     <Content Include="static\content\header.css" />
     <Content Include="static\content\pageAuthors.css" />

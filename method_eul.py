@@ -129,7 +129,7 @@ def method():
     #Конкатенация пути сохранения
     pathPicture = dir+str(filename)+'.png'
     #Дозапись в файл истории
-    history = open('historyEul.txt', 'a')
+    history = open('history/historyEul.txt', 'a')
     history.write("\n ========== " + str(datetime.datetime.now()) + " ========== " + "\n" + matrString + res)
     #Закрытие файла
     history.close()

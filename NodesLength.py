@@ -66,7 +66,7 @@ def get_matrix(): # метод получения матрицы со стран
 
 def to_file(matrix, result):#метод записи информации в файл с историей запросов
     dt = datetime.now()#получение времени запроса
-    filewrite=open('nodelength_history.txt', 'a')#запись иннформации в файл
+    filewrite=open('history/nodelength_history.txt', 'a')#запись иннформации в файл
     filewrite.write("\n")
     filewrite.write("=========="+str(dt)+" ==========\n")#время
     filewrite.write("Матрица:\n")
