@@ -36,9 +36,9 @@
 
 						function ChangeImage() {
 
-							if (changeBool) {
+							if (changeBool && "{{ imageFragment }}" != "") {
 
-								$('.graph__image img').attr('src', '/static/pictures/duck.gif');
+								$('.graph__image img').attr('src', '{{ imageFragment }}');
 								document.querySelector('.graph__image button').innerHTML = 'показать граф';
 								document.querySelector('.result__graph p').innerHTML = 'изображение фрагмента';
 								changeBool = false;

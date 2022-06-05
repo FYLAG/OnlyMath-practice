@@ -44,10 +44,9 @@ def method_fragments():
     return dict(
         title = "Нахождение заданного фрагмента в графе",
         imageGraph = "/static/pictures/staticGraphMethodFragments.png",
+        imageFragment = "",
         year=datetime.now().year,
-        listDots = [
-            ''
-        ]
+        listDots = ['']
     )
 
 @route('/method-nodes-length')

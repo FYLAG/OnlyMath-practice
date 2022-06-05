@@ -119,7 +119,8 @@ def BeginComputation():
 
 	return dict(
 		title = "Нахождение заданного фрагмента в графе",
-		imageGraph = "/static/graphs/" + "123" + ".png",
+		imageGraph = "/static/graphs/" + allMethods.matrixPicture(graph) + ".png",
+		imageFragment = "/static/graphs/" + allMethods.matrixPicture(fragment) + ".png",
 		year = datetime.now().year,
 		listDots = listDots
 	)

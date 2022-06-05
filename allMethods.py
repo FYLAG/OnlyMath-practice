@@ -1,11 +1,12 @@
+import io, os, re, pdb, app, datetime, time
+import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
-import matplotlib.pyplot as plt
+
 from bottle import post, request
-import io, os, re, pdb, app
 from random import randint
 
-def checkSymmetryMatrix(matrix):
+def checkSymmetryMatrix(matrix): # функция проверки симметричности матрицы
 
 	for y in range(len(matrix)):
 
@@ -17,7 +18,7 @@ def checkSymmetryMatrix(matrix):
 
 	return True
 
-def transformationListDots(listDots):
+def transformationListDots(listDots): # функция для красивого вывода строки с точками
 
 	for i in range(len(listDots)):
 
@@ -36,3 +37,17 @@ def matrixReading(sizeMatrix, nameMatrix): # функция для автосо�
 			finishMatrix[y][x] = int(request.forms.get(str(y + 1) + nameMatrix + str(x + 1)))
 
 	return finishMatrix
+
+def matrixPicture(matrix):
+	
+	plt.clf() # очистка буфера MatPlotLib
+
+	G = nx.Graph(np.matrix(matrix)) # создание матрицы из преобразованной в np.matrix
+
+	nx.draw(G, pos=nx.circular_layout(G), node_color="#C83033", node_size=400, font_color='white', edge_color='#333', with_labels=True, arrows=False)
+
+	dt = datetime.datetime.now() # запись уникального времени в переменную
+	fileName = str(round(time.mktime(dt.timetuple())))
+	plt.savefig('static/graphs/' + fileName + '.png') # сохранение изображения графа
+
+	return fileName
