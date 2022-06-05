@@ -66,16 +66,41 @@
 				</div>
 				<form action="#" class="container__data" method="POST">
 					<div class="data__input">
-						<input class="count__all count__matrix" placeholder="введите размер матрицы" type="number" min="2" max="11" value="" name="matrixGraphSize" title="Значение должно быть не меньше 1 и не больше 11" required>
-						<input class="count__all count__fragment" placeholder="введите размер фрагмента" type="number" min="2" max="11" value="" name="matrixFragmentSize" title="Значение должно быть не меньше 1 и не больше 11" required>
+						% if (len(graphMatrix) > 0):
+						<input class="count__all count__matrix" placeholder="введите размер матрицы" type="number" min="2" max="11" value="{{ len(graphMatrix) }}" name="matrixGraphSize" title="Значение должно быть не меньше 2 и не больше 11" required>
+						<input class="count__all count__fragment" placeholder="введите размер фрагмента" type="number" min="2" max="11" value="{{ len(fragmentMatrix) }}" name="matrixFragmentSize" title="Значение должно быть не меньше 2 и не больше 11" required>
+						% else:
+						<input class="count__all count__matrix" placeholder="введите размер матрицы" type="number" min="2" max="11" value="" name="matrixGraphSize" title="Значение должно быть не меньше 2 и не больше 11" required>
+						<input class="count__all count__fragment" placeholder="введите размер фрагмента" type="number" min="2" max="11" value="" name="matrixFragmentSize" title="Значение должно быть не меньше 2 и не больше 11" required>
+						% end
 						<!-- <input accept=".txt" type="file" placeholder="asd" class="button__all button__open"></a> -->
 						<a class="button__all button__save">сохранить матрицу</a>
 						<input class="button__all button__apply" type="submit" name="" value="посчитать результат">
 					</div>
 					<p class="input__info">Изменяйте матрицу при помощи нажатия на ячейку с числом.</p>
 					<div class="data__matrixs" id="matrixs__JS">
-						<table class="table__matrix" id="matrix__JS__fullGraph"></table>
-						<table class="table__matrix" id="matrix__JS__fragment"></table>
+						<table class="table__matrix" id="matrix__JS__fullGraph">
+							% for y in range(len(graphMatrix)):
+							<tr>
+								% for x in range(len(graphMatrix[0])):
+								<td>
+									<input class="count__lines" type="number" min="0" max="1" value="{{ graphMatrix[y][x] }}" name="' + y + '.G.' + x +'" title="' + y + ' строка ' + x + ' столбец" readonly="readonly" required>
+								</td>
+								% end
+							</tr>
+							% end
+						</table>
+						<table class="table__matrix" id="matrix__JS__fragment">
+							% for y in range(len(fragmentMatrix)):
+							<tr>
+								% for x in range(len(fragmentMatrix[0])):
+								<td>
+									<input class="count__lines" type="number" min="0" max="1" value="{{ fragmentMatrix[y][x] }}" name="' + y + '.F.' + x +'" title="' + y + ' строка ' + x + ' столбец" readonly="readonly" required>
+								</td>
+								% end
+							</tr>
+							% end
+						</table>
 					</div>
 
 					<script>
@@ -116,7 +141,7 @@
 						$('.count__matrix').change(function() {
 
 							$('.count__fragment').attr('max', Number($('.count__matrix').val()));
-							$('.count__fragment').attr('title', 'Значение должно быть не меньше 1 и не больше ' + $('.count__fragment').attr('max'));
+							$('.count__fragment').attr('title', 'Значение должно быть не меньше 2 и не больше ' + $('.count__fragment').attr('max'));
 
 							AddElementsInput('.count__matrix', '#matrix__JS__fullGraph', '.G.', matrixCountMAX, matrixCountMIN);
 							
@@ -218,6 +243,10 @@
 					$('.links__graph').click(function() {
 						ViewBlockResult();
 					});
+
+					if ("{{ imageFragment }}" != "") {
+						ViewBlockResult();
+					}
 
 				</script>
 

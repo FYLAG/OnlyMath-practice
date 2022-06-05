@@ -45,6 +45,8 @@ def method_fragments():
         title = "Нахождение заданного фрагмента в графе",
         imageGraph = "/static/pictures/staticGraphMethodFragments.png",
         imageFragment = "",
+        graphMatrix = [],
+        fragmentMatrix = [],
         year=datetime.now().year,
         listDots = ['']
     )

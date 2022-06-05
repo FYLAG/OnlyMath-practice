@@ -94,6 +94,39 @@ def MainLogic(dot, begin):
 
 					allEquals += 1
 
+def WriteFile(graphArr, fragmentArr, listDotsArr):
+
+	with open('history/hystoryMethodFragments.txt', 'r') as file:
+
+		dataFile = file.read()
+
+	with open('history/hystoryMethodFragments.txt', 'w') as file:
+		
+		file.write("\n ========== " + str(datetime.now()) + " ========== \n" + 
+			 "\n Матрица графа: \n")
+
+		for i in graphArr:
+			file.write(" " + str(i) + "\n")
+
+		file.write("\n Матрица фрагмента: \n")
+
+		for i in fragmentArr:
+			file.write(" " + str(i) + "\n")
+
+		file.write("\n Точки совпадений: \n")
+
+		for i in range(len(listDotsArr)):
+
+			if ((i + 1) % 2 == 0):
+
+				file.write("  |  " + listDotsArr[i] + "\n")
+
+			else:
+
+				file.write(" " + listDotsArr[i])
+
+		file.write(dataFile)
+
 pathGraph = "imageGraph"
 pathFragment = "imageFragment"
 
@@ -123,43 +156,14 @@ def BeginComputation():
 
 	listDots = allMethods.transformationListDots(listDots).copy()
 
-	with open('history/hystoryMethodFragments.txt', 'r') as file:
-
-		dataFile = file.read()
-
-	with open('history/hystoryMethodFragments.txt', 'w') as file:
-		
-		file.write("\n ========== " + str(datetime.now()) + " ========== \n" + 
-			 "\n Матрица графа: \n")
-
-		for i in graph:
-			file.write(" " + str(i) + "\n")
-
-		file.write("\n Матрица фрагмента: \n")
-
-		for i in fragment:
-			file.write(" " + str(i) + "\n")
-
-		file.write("\n Точки совпадений: \n")
-
-		for i in range(len(listDots)):
-
-			if ((i + 1) % 2 == 0):
-
-				file.write("  |  " + listDots[i] + "\n")
-
-			else:
-
-				file.write(" " + listDots[i])
-
-		file.write(dataFile)
-
-	#historyFile.close() # закрываем файл
+	WriteFile(graph, fragment, listDots)
 
 	return dict(
 		title = "Нахождение заданного фрагмента в графе",
 		imageGraph = "/static/graphs/" + pathGraph + ".png",
 		imageFragment = "/static/graphs/" + pathFragment + ".png",
+		graphMatrix = graph,
+		fragmentMatrix = fragment,
 		year = datetime.now().year,
 		listDots = listDots
 	)
