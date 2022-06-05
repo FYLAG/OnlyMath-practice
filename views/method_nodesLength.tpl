@@ -18,8 +18,8 @@
 			<p><a name="top"></a></p>
 			<div class="article__container"> 
 				%if image =="":
-				<div class="container__linkTheory">
-					<a href="#theory_top">посмотреть теорию</a>
+				<div class="container__links">
+					<a class="links__theory" href="#theory_top">посмотреть теорию</a>
 				</div>
 				%end
 
@@ -38,11 +38,11 @@
 					<!--Контейнер с кнопками -->
 					<div class="data__input">
 					%if image =="":
-						<input class="count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
+						<input class="count__all count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
 					%else:
-						<input class="count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="{{len(matrixout)}}" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
+						<input class="count__all count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="{{len(matrixout)}}" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
 					%end
-						<input class="count__matrix" id="idlevel" placeholder="Уровень" type="number" min="0" max="25" value="" name="level" title="Значение должно быть не меньше 0 и не больше 25" required>
+						<input class="count__all count__matrix" id="idlevel" placeholder="Уровень" type="number" min="0" max="25" value="" name="level" title="Значение должно быть не меньше 0 и не больше 25" required>
 						<a class="button__all button__save">Cохранить</a>
 						<input class="button__all button__apply" type="submit" name="form__button" value="Результат">
 					</div>

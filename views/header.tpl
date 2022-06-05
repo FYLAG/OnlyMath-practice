@@ -9,7 +9,7 @@
 			<div class="menu__link">
 				<p>виды решений</p>
 				<ul>
-					<li><a href="/method-fragments">Заданный фрагмент в графе</a></li>
+					<li><a href="/method-fragments">Нахождение заданного фрагмента в графе</a></li>
 					<li><a href="/method-nodes-length">Поиск вершин, имеющих наибольшее окружение</a></li>
 					<li><a href="/method-eul">Поиск Эйлерова цикла (цепи) в графе</a></li>
 				</ul>

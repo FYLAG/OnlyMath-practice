@@ -28,7 +28,7 @@
 				</div>
 				<div class="container__author">
 					<div class="author__image">
-						<img src="/static/pictures/graphs.png">
+						<img src="/static/pictures/graph.png">
 					</div>
 					<div class="author__info">
 						<h2><a href="/method-fragments" style="color: #fff; text-decoration:underline;">Метод поиска фрагментов в графе</a></h2>

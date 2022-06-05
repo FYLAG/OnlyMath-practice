@@ -36,7 +36,7 @@
 						<p>Разработка дизайна. Создание страницы "об авторах", разработка алгоритма для нахождения фрагмента в графе, создание страницы для нахождения фрагмента графа. Написание JS сриптов.</p>
 					</div>
 					<div class="author__image">
-						<img style="transform: translate(-50%, -50%) scaleX(-1); filter: grayscale(100%)" src="/static/pictures/amogus.gif">
+						<img style="transform: translate(-50%, -50%) scaleX(-1)" src="/static/pictures/duck.gif">
 					</div>
 				</div>
 				<div class="container__author">

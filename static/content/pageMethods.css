@@ -31,30 +31,123 @@ article {
 	margin: 0 auto;
 }
 
-.container__linkTheory {
+.container__links {
 	position: relative;
 	width: 100%;
 	height: 40px;
 	border-bottom: 3px solid #333;
 }
 
-.container__linkTheory a {
-	position: absolute;
+.container__links a {
 	font-family: 'Arial';
 	line-height: 40px;
 	padding: 0 25px;
 	height: 40px;
 	color: #333;
+}
+
+.container__links .links__theory {
+	position: absolute;
 	right: 0;
 }
 
-.container__linkTheory a:hover {
+.container__links a:hover {
 	color: #00F;
 }
 
-.container__data {
+.container__result {
+	justify-content: center;
+	font-family: 'Arial';
+	min-height: 560px;
+	display: none;
 	width: 100%;
-	min-height: 780px;
+}
+
+.container__result.open {
+	display: flex;
+}
+
+.result__graph {
+	position: relative;
+	min-height: 500px;
+	max-width: 50%;
+	padding: 25px;
+}
+
+.result__graph p {
+	position: sticky;
+	text-align: center;
+	font-size: 18px;
+	padding: 10px;
+	width: 100%;
+	top: 50px;
+}
+
+.graph__image {
+	position: sticky;
+	z-index: 100;
+	top: 100px;
+}
+
+.graph__image button {
+	background: #C83033;
+	position: absolute;
+	padding: 10px 15px;
+	box-shadow: 0 0 25px 0 #AAA;
+	cursor: pointer;
+	z-index: 100;
+	border: none;
+	color: #FFF;
+	left: 15px;
+	top: 15px;
+	transition: box-shadow .3s, transform .3s;
+}
+
+.graph__image button:active {
+	box-shadow: 0 0 0 0 #AAA;
+	transform: scale(.9);
+}
+
+.graph__image img {
+	position: sticky;
+	border: 1px solid #AAA;
+	background: #FFF;
+	padding: 25px;
+	z-index: 10;
+	width: 100%;
+	top: 100px;
+}
+
+.result__fragments {
+	box-shadow: inset 0 0 10px 0 #AAA;
+	position: relative;
+	background: #FFF;
+	margin-top: 25px;
+	max-width: 50%;
+	padding: 25px;
+}
+
+.result__fragments h2 {
+	padding-bottom: 10px;
+	width: 100%;
+}
+
+.fragments__listDots {
+	width: 100%;
+}
+
+.fragments__listDots p {
+	font-size: 18px;
+	padding: 5px 0;
+}
+
+.container__data {
+	min-height: 720px;
+	width: 100%;
+}
+
+.container__data.close {
+	display: none;
 }
 
 .data__input {
@@ -67,14 +160,20 @@ article {
 	margin: 20px 10px 0 10px;
 }
 
-.count__matrix {
+.count__all {
 	text-align: center;
 	border: none;
 	border-bottom: 3px solid rgba(0, 0, 0, .25);
+	font-family: 'Arial';
+	line-height: 50px;
 	background: #DDD;
 	font-size: 20px;
+	min-width: 300px;
 	outline: none;
 	height: 50px;
+}
+
+.count__matrix { /**************/
 	width: 250px;
 }
 
@@ -83,8 +182,8 @@ article {
 	font-size: 18px;
 	padding: 0 25px;
 	font-size: 20px;
-	font-family: 'Arial';
 	text-align: center;
+	font-family: 'Arial';
 	line-height: 47px;
 	height: 50px;
 	color: #000;
@@ -116,6 +215,12 @@ article {
 	transform: scale(.95);
 }
 
+.container__data .input__info {
+	font-family: 'Arial';
+	padding: 20px 0 0 80px;
+	width: 100%;
+}
+
 .count__lines {
 	text-align: center;
 	padding-left: 14px;
@@ -126,6 +231,15 @@ article {
 	border: none;
 	height: 42px;
 	width: 42px;
+	transition: transform .1s;
+}
+
+.count__lines:active {
+	transform: scale(.9);
+}
+
+.data__matrixs {
+	display: flex;
 }
 
 .table__matrix {
@@ -135,6 +249,24 @@ article {
 	top: 20px;
 	left: 0;
 	text-align: center;
+}
+
+.container__theory {
+	font-family: 'Arial';
+	line-height: 25px;
+	text-align: justify;
+}
+
+.container__theory.close {
+	display: none;
+}
+
+.blockFlex {
+	display: flex;
+}
+
+.blockFlex > * {
+	margin: 25px;
 }
 
 /* method */

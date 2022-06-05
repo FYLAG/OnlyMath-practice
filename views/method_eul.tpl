@@ -18,8 +18,8 @@
 			<div class="article__container">
 			<!-- Блок с кнопкой истории -->
 			%if image_path == "":
-				<div class="container__linkTheory">
-					<a href="#Theory_Block">посмотреть теорию</a>
+				<div class="container__links">
+					<a class="links__theory" href="#Theory_Block">посмотреть теорию</a>
 				</div>
 				%end
 				<!-- Форма для заполнения матрицы -->
@@ -39,9 +39,9 @@
 					<!-- Блок с элементами ввода -->
 					<div class="data__input">
 					%if image_path != "":
-						<input class="count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="{{len(matrixout)}}" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
+						<input class="count__all count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="{{len(matrixout)}}" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
 						%else:
-						<input class="count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
+						<input class="count__all count__matrix" placeholder="Размерность матрицы" type="number" min="2" max="25" value="" name="matrix_size" title="Значение должно быть не меньше 1 и не больше 25" required>
 						%end
 						<a class="button__all button__save">Сохранить</a>
 						<input class="button__all button__apply" type="submit" name="form__button" value="Результат">
