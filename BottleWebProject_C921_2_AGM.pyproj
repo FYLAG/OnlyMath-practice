@@ -77,7 +77,18 @@
     <Content Include="static\content\pageAuthors.css" />
     <Content Include="static\content\pageMain.css" />
     <Content Include="static\content\pageMethods.css" />
+    <Content Include="static\pictures\binary_matrix.jpg" />
+    <Content Include="static\pictures\cat-laptop.gif" />
+    <Content Include="static\pictures\duck.gif" />
+    <Content Include="static\pictures\euler-big.png" />
+    <Content Include="static\pictures\euler-small.png" />
+    <Content Include="static\pictures\graph-fragments.gif" />
+    <Content Include="static\pictures\graph.png" />
     <Content Include="static\pictures\leclerc.gif" />
+    <Content Include="static\pictures\level_graph.jpg" />
+    <Content Include="static\pictures\matrix-count.gif" />
+    <Content Include="static\pictures\matrix_smeghnost.jpg" />
+    <Content Include="static\pictures\staticGraphMethodFragments.png" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
@@ -105,7 +116,7 @@
     <Content Include="static\tests\Эйлеровые\data %282%29.txt" />
     <Content Include="static\tests\Эйлеровые\data %283%29.txt" />
     <Content Include="static\tests\Эйлеровые\data.txt" />
-    <Content Include="views\authors.tpl" />
+    <Content Include="views\about.tpl" />
     <Content Include="views\footer.tpl" />
     <Content Include="views\header.tpl" />
     <Content Include="views\index.tpl" />

@@ -16,8 +16,8 @@ def home():
         year = datetime.now().year
     )
 
-@route('/authors')
-@view('authors')
+@route('/about')
+@view('about')
 def authors():
     """Renders the authors page."""
     return dict(

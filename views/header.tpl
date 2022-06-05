@@ -14,7 +14,7 @@
 					<li><a href="/method-eul">Поиск Эйлерова цикла (цепи) в графе</a></li>
 				</ul>
 			</div>
-			<a class="menu__link" href="/authors"><p>об авторах</p></a>
+			<a class="menu__link" href="/about"><p>об авторах</p></a>
 		</div>
 	</div>
 	<div class="page__title">
