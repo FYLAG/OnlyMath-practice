@@ -58,6 +58,7 @@
 					<div class="result__fragments">
 						<h2>точки фрагментов:</h2>
 						<div class="fragments__listDots">
+							<p>всего совпадений: {{ allEquals }}</p>
 							% for i in listDots:
 							<p>{{ i }}</p>
 							% end
@@ -84,7 +85,7 @@
 							<tr>
 								% for x in range(len(graphMatrix[0])):
 								<td>
-									<input class="count__lines" type="number" min="0" max="1" value="{{ graphMatrix[y][x] }}" name="' + y + '.G.' + x +'" title="' + y + ' строка ' + x + ' столбец" readonly="readonly" required>
+									<input class="count__lines" type="number" min="0" max="1" value="{{ graphMatrix[y][x] }}" name="{{ y + 1 }}.G.{{ x + 1 }}" title="' + y + ' строка ' + x + ' столбец" readonly="readonly" required>
 								</td>
 								% end
 							</tr>
@@ -95,7 +96,7 @@
 							<tr>
 								% for x in range(len(fragmentMatrix[0])):
 								<td>
-									<input class="count__lines" type="number" min="0" max="1" value="{{ fragmentMatrix[y][x] }}" name="' + y + '.F.' + x +'" title="' + y + ' строка ' + x + ' столбец" readonly="readonly" required>
+									<input class="count__lines" type="number" min="0" max="1" value="{{ fragmentMatrix[y][x] }}" name="{{ y + 1 }}.F.{{ x + 1 }}" title="' + y + ' строка ' + x + ' столбец" readonly="readonly" required>
 								</td>
 								% end
 							</tr>
@@ -126,8 +127,14 @@
 		
 					 				for (var o = matrixCount; o > 0; o--) {
 
+					 					var valueInput = 0
+
+					 					if (inputName == ".F." && i != o)
+
+					 						valueInput = 1
+
 					 					$(matrixName).prepend('<td>');
-					 					$(matrixName).prepend('<input class="count__lines" type="number" min="0" max="1" value="0" name="' + i + inputName + o +'" title="' + i + ' строка ' + o + ' столбец" readonly="readonly" required>');
+					 					$(matrixName).prepend('<input class="count__lines" type="number" min="0" max="1" value="' + valueInput + '" name="' + i + inputName + o +'" title="' + i + ' строка ' + o + ' столбец" readonly="readonly" required>');
 					 					$(matrixName).prepend('</td>');
 
 					 				}
@@ -141,6 +148,16 @@
 						$('.count__matrix').change(function() {
 
 							$('.count__fragment').attr('max', Number($('.count__matrix').val()));
+
+							var fragmentCountMAX = Number($('.count__fragment').attr('max'))
+
+							if (Number($('.count__fragment').val()) > Number(fragmentCountMAX)) {
+
+								$('.count__fragment').val(fragmentCountMAX)
+								AddElementsInput('.count__fragment', '#matrix__JS__fragment', '.F.', fragmentCountMAX, fragmentCountMIN);
+
+							}
+
 							$('.count__fragment').attr('title', 'Значение должно быть не меньше 2 и не больше ' + $('.count__fragment').attr('max'));
 
 							AddElementsInput('.count__matrix', '#matrix__JS__fullGraph', '.G.', matrixCountMAX, matrixCountMIN);
@@ -160,17 +177,19 @@
 							var changedInput = $(this);
 							var nameInput = changedInput.attr("name");
 
-							if (nameInput.split(".").reverse().join(".") != nameInput) {
+							if (nameInput.split(".")[1] != "F") {
 
-								changedInput.val(Math.abs(changedInput.val() - 1));
-
-								$("input[name='" + nameInput.split(".")[2]
-									+ '.' + nameInput.split(".")[1]
-									+ '.' + nameInput.split(".")[0]
-									+ "']").val(changedInput.val());
-
+								if (nameInput.split(".").reverse().join(".") != nameInput) {
+	
+									changedInput.val(Math.abs(changedInput.val() - 1));
+	
+									$("input[name='" + nameInput.split(".")[2]
+										+ '.' + nameInput.split(".")[1]
+										+ '.' + nameInput.split(".")[0]
+										+ "']").val(changedInput.val());
+	
+								}
 							}
-
 						});
 
 					 	// Добавление нового элемента на страницу.

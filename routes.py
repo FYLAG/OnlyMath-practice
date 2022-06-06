@@ -48,7 +48,8 @@ def method_fragments():
         graphMatrix = [],
         fragmentMatrix = [],
         year=datetime.now().year,
-        listDots = ['']
+        listDots = [''],
+        allEquals = 0
     )
 
 @route('/method-nodes-length')

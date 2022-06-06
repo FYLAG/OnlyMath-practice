@@ -28,6 +28,30 @@ allEquals = 0
 
 listDots = []
 
+def CheckArr__transposition(arr): # меняет точки внутри списка и проверяет с фрагментом
+
+	arrBig = [ 0 for i in arr]
+
+	for i in range(len(arr)):
+
+		arrBig[i] = arr[i].copy()
+
+	arrBig.append([ 0 for i in range(len(arr[0]))])
+
+	arrBig[len(arr)] = arrBig[0]
+
+	arrBig.pop(0)
+
+	for y in range(len(arrBig)):
+
+		arrBig[y].append(arrBig[y][0])
+
+	for y in range(len(arrBig)):
+
+		del arrBig[y][0]
+
+	return arrBig
+
 def CheckArr__counter(arrFull, arrFragment, y, x, n):
 
 	if (arrFragment[y][x] == 1):
@@ -70,29 +94,29 @@ def MainLogic(dot, begin):
 
 	for i in range(max(dot, begin), len(graph[0]) + dot + 1 - len(fragment[0])):
 
-			print('\t' * dot + str(dot) + ' - ' + str(i))
+		print('\t' * dot + str(dot) + ' - ' + str(i))
 
-			testikDots[dot] = i
+		testikDots[dot] = i
 
-			if (dot < len(fragment[0]) - 1): # ограничение для рекурсии
+		if (dot < len(fragment[0]) - 1): # ограничение для рекурсии
 
-				MainLogic(dot + 1, i + 1)
+			MainLogic(dot + 1, i + 1)
 
-			else:
+		else:
 
-				for x in reversed(range(len(testikArr))):
+			for x in reversed(range(len(testikArr))):
 
-					testikArr[x][x] = graph[testikDots[x]][testikDots[x]]
+				testikArr[x][x] = graph[testikDots[x]][testikDots[x]]
 
-					for y in reversed(range(x)):
+				for y in reversed(range(x)):
 
-						testikArr[y][x] = graph[testikDots[y]][testikDots[x]]
+					testikArr[y][x] = graph[testikDots[y]][testikDots[x]]
 
-				if (CheckArr(testikArr, fragment)):
+			if (CheckArr(testikArr, fragment)):
 
-					listDots.append(testikDots.copy())
+				listDots.append(testikDots.copy())
 
-					allEquals += 1
+				allEquals += 1
 
 def WriteFile(graphArr, fragmentArr, listDotsArr):
 
@@ -150,6 +174,8 @@ def BeginComputation():
 
 	start_time = time.time()
 
+	graphTestik = [ 0 for i in graph ]
+
 	MainLogic(0, 0)
 
 	print("\n --- %s seconds ---" % (time.time() - start_time))
@@ -165,5 +191,6 @@ def BeginComputation():
 		graphMatrix = graph,
 		fragmentMatrix = fragment,
 		year = datetime.now().year,
-		listDots = listDots
+		listDots = listDots,
+		allEquals = allEquals
 	)
